@@ -20,6 +20,7 @@ type Struct struct {
     Who      string
 }
 
+//blah blah blah
 func (s Struct) ServeHTTP(
 	w http.ResponseWriter,
 	r *http.Request) {
