@@ -6,6 +6,14 @@ import (
 	"fmt"
 )
 
+type String string
+
+func (s String) ServeHTTP(
+	w http.ResponseWriter,
+	r *http.Request) {
+	fmt.Fprint(w, s)
+}
+
 type Struct struct {
     Greeting string
     Punct    string
@@ -23,6 +31,6 @@ func (s Struct) ServeHTTP(
 func main() {
 	// your http.Handle calls here
 	http.Handle("/string", String("I'm a frayed knot."))
-	http.Handle("/struct", &Struct{"Hello", ":", "Humans!"})
+	http.Handle("/struct", &Struct{"Hello", ":", "Gophers!"})
 	log.Fatal(http.ListenAndServe("localhost:4000", nil))
 }
