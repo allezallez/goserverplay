@@ -14,7 +14,6 @@ func (s String) ServeHTTP(
 	fmt.Fprint(w, s)
 }
 
-// this is a stupid struct
 type Struct struct {
     Greeting string
     Punct    string
